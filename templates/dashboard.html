@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Your Conversations</h2>
+<p><a href="{{ url_for('new_conversation') }}" class="btn">Start a new conversation</a></p>
+<ul>
+    {% for c in conversations %}
+    <li>
+        <a href="{{ url_for('chat', conv_id=c.id) }}">{{ c.title or ('Conversation ' ~ c.id) }}</a>
+        - {{ c.created_at.strftime('%Y-%m-%d %H:%M:%S') }}
+    </li>
+    {% else %}
+    <li>No conversations yet. Start a new one above!</li>
+    {% endfor %}
+</ul>
+{% endblock %}

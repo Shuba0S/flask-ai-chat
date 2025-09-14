@@ -1,0 +1,41 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Flask AI Chatbot</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+<body>
+    <header>
+        <h1><a href="{{ url_for('dashboard') }}">Flask AI Chatbot</a></h1>
+        {% if current_user.is_authenticated %}
+        <nav>
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('new_conversation') }}">New Conversation</a>
+            {# <a href="{{ url_for('profile') }}">Profile</a>#}
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+        {% else %}
+        <nav>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('signup') }}">Sign up</a>
+        </nav>
+        {% endif %}
+    </header>
+
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, msg in messages %}
+        <div class="flash {{ category }}">{{ msg }}</div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <small>Built with  using Flask</small>
+    </footer>
+</body>
+</html>

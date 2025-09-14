@@ -1,0 +1,8 @@
+Flask
+Flask-Login
+Flask-WTF
+SQLAlchemy
+email-validator
+Werkzeug
+openai
+python-dotenv

@@ -139,3 +139,16 @@ Visit: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 ## 📄 License
 
 Released under the **MIT License**. See [LICENSE](LICENSE) for details.
+
+---
+
+## 🖼️ Screenshots
+
+### 🔐 Login Page
+![Login Page](screenshots/login-page.png)
+
+### 🧠 Chat Interface
+![Chat Page](screenshots/chat-page.png)
+
+### 🧾 Dashboard
+![Dashboard](screenshots/dashboard.png)
